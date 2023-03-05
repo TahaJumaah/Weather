@@ -39,9 +39,9 @@ async function getWeatherData(lat, lon) {
 
     const weatherJson = await weatherResponse.json();
     // console.log(weatherJson)
-    currentTempOnPage.innerText = weatherJson.current_weather.temperature
-    maxOnPage.innerText = `Max: ${weatherJson.daily.temperature_2m_max[1]}`;
-    minOnPage.innerText = `Min: ${weatherJson.daily.temperature_2m_min[1]}`;
+    currentTempOnPage.innerText = `${weatherJson.current_weather.temperature} °C`
+    maxOnPage.innerText = `Max: ${weatherJson.daily.temperature_2m_max[1]} °C`;
+    minOnPage.innerText = `Min: ${weatherJson.daily.temperature_2m_min[1]} °C`;
 
     // console.log(toggle)
     for (let i = 0; i < 7; i++) {
@@ -70,7 +70,7 @@ function createDayCard(dayTempMax,dayTempMin, dateFromAPI) {
 
     const dayTemp = document.createElement("div");
     dayCard.appendChild(dayTemp);
-    dayTemp.innerText = `High: ${dayTempMax} Low : ${dayTempMin}`;
+    dayTemp.innerText = `High: ${dayTempMax} °C Low : ${dayTempMin}°C`;
 }
 
 
