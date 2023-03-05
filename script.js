@@ -13,7 +13,7 @@ function sendCityName() {
 
 
 async function getCityCoor(cityName) {
-    const coorResponse = await  fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=aeb7122599f96b6ca0d19344e9e9c13f`)
+    const coorResponse = await  fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=aeb7122599f96b6ca0d19344e9e9c13f`)
     const cityCoorJson = await coorResponse.json()
     // console.log(cityCoorJson)
     cityNameOnPage.innerText = cityCoorJson[0].name
